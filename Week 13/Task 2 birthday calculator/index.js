@@ -28,11 +28,19 @@ function calculate(event) {
     return daysLeft;
 }
 function dayName(daysLeft) {
-    if (daysLeft > 10 && [11, 12, 13, 14].includes(daysLeft%100)) return 'дней';
+    /*if (daysLeft > 10 && [11, 12, 13, 14].includes(daysLeft%100)) return 'дней';
     last_num = daysLeft%10;
     if (last_num == 1) return 'день';
     if ([2,3,4].includes(last_num)) return 'дня';
-    if ([5,6,7,8,9, 0].includes(last_num)) return 'дней';
+    if ([5,6,7,8,9, 0].includes(last_num)) return 'дней';*/
+    if (daysLeft ===1) {
+        return 'день';
+    } else if (daysLeft > 1 && daysLeft < 5) {
+        return 'дня';
+    } else {
+        return 'дней';
+    }
+
 }
 
 button.addEventListener('click', calculate);
